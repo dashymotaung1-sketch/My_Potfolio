@@ -1,100 +1,231 @@
-body{
-    font-family: Arial, sans-serif;
-    margin:0;
-    background:#f0f7f6;
-    text-align:center;
+/* ============================
+   General Reset & Base Styles
+=============================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-/* Header */
-.hero{
-    background:#1abc9c;
-    color:white;
-    padding:50px 20px;
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    color: #e0e0e0;
+    background-color: #121212;
 }
 
-/* Profile Image */
-.profile-img{
-    width:150px;
-    height:150px;
-    border-radius:50%;
-    margin-top:20px;
-    border:4px solid white;
+a {
+    color: #ff9800;
+    text-decoration: none;
 }
 
-/* Section Container */
-.container{
-    padding:40px;
+a:hover {
+    color: #ffc107;
 }
 
-/* Project Cards */
-.project{
-    background:white;
-    margin:20px auto;
-    padding:20px;
-    max-width:500px;
-    border-radius:12px;
-    box-shadow:0 3px 12px rgba(0,0,0,0.08);
+img {
+    max-width: 100%;
+    display: block;
+    border-radius: 10px;
 }
 
-/* Footer */
-footer{
-    background:#16a085;
-    color:white;
-    padding:20px;
+/* ============================
+   Header & Hero Section
+=============================== */
+header.hero {
+    background: #1f1f1f;
+    color: #ff9800;
+    text-align: center;
+    padding: 60px 20px 40px;
 }
+
+header.hero nav {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+header.hero nav a {
+    font-weight: 600;
+    color: #ff9800;
+    transition: all 0.3s ease;
+}
+
+header.hero nav a:hover {
+    color: #ffc107;
+}
+
+header.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+header.hero p {
+    font-size: 1.2rem;
+    color: #ccc;
+}
+
+header.hero .profile-img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin: 20px auto;
+    border: 4px solid #ff9800;
+    object-fit: cover;
+}
+
+/* ============================
+   Container Sections
+=============================== */
 .container {
-    max-width: 900px;
-    margin: 50px auto;
-    padding: 30px;
-    background: #f9fafc;
-    border-radius: 16px;
-    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
-    font-family: Arial, Helvetica, sans-serif;
-    line-height: 1.7;
+    width: 90%;
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #1e1e1e;
+    border-radius: 15px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
 }
 
 .container h2 {
-    text-align: center;
-    margin-bottom: 25px;
     font-size: 2rem;
-    color: #1f2937;
-    position: relative;
+    margin-bottom: 20px;
+    color: #ff9800;
+    border-bottom: 2px solid #ff9800;
+    padding-bottom: 8px;
 }
 
-.container h2::after {
-    content: "";
-    width: 80px;
-    height: 4px;
-    background: #3b82f6;
-    display: block;
-    margin: 10px auto 0;
-    border-radius: 2px;
+/* ============================
+   Projects & Skills Cards
+=============================== */
+.project, .skill-card {
+    background-color: #2a2a2a;
+    padding: 20px;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.container p {
+.project:hover, .skill-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
+}
+
+.project h3, .skill-card h3 {
+    font-size: 1.6rem;
+    margin-bottom: 10px;
+    color: #ffc107;
+}
+
+.project p, .skill-card p {
+    color: #ccc;
+}
+
+/* Skills Icon */
+.skill-card {
+    text-align: center;
+}
+
+.skill-card i {
+    font-size: 3rem;
+    margin-bottom: 12px;
+    color: #ff9800;
+}
+
+/* ============================
+   Forms
+=============================== */
+.contact-form {
     display: flex;
-    align-items: flex-start;
-    gap: 20px;
-    color: #374151;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-form label {
+    font-weight: bold;
+    color: #fff;
+}
+
+.contact-form input,
+.contact-form textarea,
+.contact-form select {
+    padding: 12px;
+    border-radius: 10px;
+    border: none;
+    background-color: #333;
+    color: #fff;
     font-size: 1rem;
 }
 
-.container img {
-    border-radius: 12px;
-    object-fit: cover;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: 2px solid #ff9800;
 }
 
-/* Responsive design */
-@media (max-width: 600px) {
-    .container p {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
+.contact-form button {
+    background-color: #ff9800;
+    color: #121212;
+    border: none;
+    padding: 12px;
+    font-size: 1rem;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.contact-form button:hover {
+    background-color: #ffc107;
+}
+
+/* ============================
+   Contact Details
+=============================== */
+.contact-details p {
+    margin-bottom: 10px;
+    color: #ccc;
+}
+
+.contact-details img {
+    vertical-align: middle;
+    margin-right: 10px;
+}
+
+/* ============================
+   Footer
+=============================== */
+footer {
+    background-color: #1f1f1f;
+    color: #ff9800;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+}
+
+/* ============================
+   Responsive
+=============================== */
+@media (min-width: 768px) {
+    .skills-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        gap: 20px;
+    }
+}
+
+@media (min-width: 992px) {
+    header.hero h1 {
+        font-size: 4rem;
     }
 
-    .container img {
-        height: 180px;
-        width: auto;
+    header.hero p {
+        font-size: 1.5rem;
+    }
+
+    .container {
+        padding: 40px;
     }
 }
